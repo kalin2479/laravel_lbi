@@ -16,7 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="/adminlte/Ionicons/css/ionicons.min.css">
 
-  <link rel="stylesheet" href="/adminlte/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Aqui vamos a llamar a los estilos que iremos necesitando en la plataforma -->
+
+  @stack('styles');
 
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
@@ -380,25 +382,12 @@ desired effect
 <!-- Bootstrap 3.3.7 -->
 <script src="/adminlte/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- DataTables -->
-<script src="/adminlte/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="/adminlte/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+@stack('scripts');
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/adminlte.min.js"></script>
 
-<script>
-  $(function () {
-    $('#posts-table').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
+
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
